@@ -47,30 +47,36 @@ const (
 	errorf  = "\033[91m"
 )
 
+// CustomLogger is the main struct
 type CustomLogger struct {
 	Log *log.Logger
 }
 
+// Info prints output to the console colored and with and emoji
 func (l *CustomLogger) Info(msg ...any) {
 	InfoLogger := log.New(os.Stdout, fmt.Sprintf("%sINFO |ℹ️ | %s", info, nocolor), log.Ldate|log.Ltime|log.Lshortfile)
 	InfoLogger.Printf("%s Info log %s", info, nocolor)
 }
 
+// Warn prints output to the console colored and with and emoji
 func (l *CustomLogger) Warn(msg ...any) {
 	WarningLogger := log.New(os.Stdout, fmt.Sprintf("%sWARNING |⚠️ |%s", warning, nocolor), log.Ldate|log.Ltime|log.Lshortfile)
 	WarningLogger.Printf("%s Warning log %s", warning, nocolor)
 }
 
+// Fatal prints output to the console colored and with and emoji. Returns exit 1
 func (l *CustomLogger) Fatal(msg ...any) {
 	FatalLogger := log.New(os.Stdout, fmt.Sprintf("%sERROR |❌| %s", errorf, nocolor), log.Ldate|log.Ltime|log.Lshortfile)
 	FatalLogger.Fatal(fmt.Sprintf("%s Fatal log %s", errorf, nocolor))
 }
 
+// Success prints output to the console colored and with and emoji
 func (l *CustomLogger) Success(msg ...any) {
 	SuccessLogger := log.New(os.Stdout, fmt.Sprintf("%sSUCCESS |✅| %s", success, nocolor), log.Ldate|log.Ltime|log.Lshortfile)
 	SuccessLogger.Printf("%s Success log %s", success, nocolor)
 }
 
+// Logger is the main function
 func Logger() CustomLogger {
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
 
