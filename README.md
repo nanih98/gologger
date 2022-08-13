@@ -12,7 +12,7 @@
 
 ---
 
-# About
+# About
 
 This library is a simple implementation of the native library log. Is almost the same but with some colors and emojis :)
 
