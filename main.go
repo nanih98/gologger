@@ -50,9 +50,3 @@ func New(out io.Writer, prefix string, flag int) CustomLogger {
 
 	return CustomLogger{Log: logger}
 }
-
-// func Logger() CustomLogger {
-// 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
-
-// 	return CustomLogger{Log: logger}
-// }
