@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	log := gologger.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
+	log := gologger.New(os.Stdout, "", log.Ldate|log.Ltime|log.LstdFlags)
 
 	log.Info("Test")
 }
