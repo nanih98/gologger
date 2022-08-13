@@ -1,6 +1,7 @@
 package gologger
 
 import (
+	"fmt"
 	"log"
 	"os"
 )
@@ -20,23 +21,27 @@ type CustomLogger struct {
 
 // Info prints output to the console colored and with and emoji
 func (l *CustomLogger) Info(msg string) {
-	l.Log.Printf("%sINFO: %s %s", info, msg, nocolor)
+	l.Log.SetPrefix(fmt.Sprintf("%sINFO%s ", info, nocolor))
+	l.Log.Printf("%s%s%s", info, msg, nocolor)
 
 }
 
 // Warn prints output to the console colored and with and emoji
 func (l *CustomLogger) Warn(msg string) {
-	l.Log.Printf("%sWARNING: %s %s", warning, msg, nocolor)
+	l.Log.SetPrefix(fmt.Sprintf("%sWARNING%s ", warning, nocolor))
+	l.Log.Printf("%s%s%s", warning, msg, nocolor)
 }
 
 // Fatal prints output to the console colored and with and emoji. Returns exit 1
 func (l *CustomLogger) Fatal(err error) {
-	l.Log.Fatalf("%sFATAL: %v %s", errorf, err, nocolor)
+	l.Log.SetPrefix(fmt.Sprintf("%sFATAL%s ", errorf, nocolor))
+	l.Log.Fatalf("%s%v%s", errorf, err, nocolor)
 }
 
 // Success prints output to the console colored and with and emoji
 func (l *CustomLogger) Success(msg string) {
-	l.Log.Printf("%sSUCCESS: %s %s", success, msg, nocolor)
+	l.Log.SetPrefix(fmt.Sprintf("%sSUCCESS%s ", success, nocolor))
+	l.Log.Printf("%s%s%s", success, msg, nocolor)
 }
 
 // Logger is the main function
