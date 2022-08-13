@@ -4,3 +4,6 @@
   <p align="center">Simple package for logging in golang</p>
 </p>
 
+---
+
+
