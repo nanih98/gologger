@@ -30,8 +30,8 @@ func (l *CustomLogger) Warn(msg string) {
 }
 
 // Fatal prints output to the console colored and with and emoji. Returns exit 1
-func (l *CustomLogger) Fatal(msg string) {
-	l.Log.Printf("%sFATAL: %s %s", errorf, msg, nocolor)
+func (l *CustomLogger) Fatal(err error) {
+	l.Log.Fatalf("%sFATAL: %v %s", errorf, err, nocolor)
 }
 
 // Success prints output to the console colored and with and emoji
