@@ -47,5 +47,4 @@ For production environments or real apps, use the following libraries:
 
 * Zap
 * Zerolog
-* Logrus (my favourite)
-
+* Logrus (my favorite)
