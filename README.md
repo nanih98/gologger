@@ -12,12 +12,32 @@
 
 ---
 
+# Simple usage
+
+```go
+package main
+
+import (
+ "github.com/nanih98/gologger"
+)
+
+func main() {
+ log := gologger.New(os.Stdout, "", log.Ldate|log.Ltime)
+ log.Info("Info log")
+ log.Warn("Warning log")
+ //....
+}
+```
+
 # About
 
-This library is a simple implementation of the native library log. Is almost the same but with some colors and emojis :)
+This library is a simple implementation of the native library log. Is almost the same but with colored output.
 
-Don't support output JSON format. For this, use the libraries like: 
+It is not for production environments, just to learn how to create your own library :)
+
+For production environments or real apps, use the following libraries:
 
 * Zap
 * Zerolog
-* Logrus
+* Logrus (my favourite)
+
