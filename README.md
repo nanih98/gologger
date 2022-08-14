@@ -18,6 +18,10 @@
 package main
 
 import (
+ "fmt"
+ "log"
+ "os"
+
  "github.com/nanih98/gologger"
 )
 
@@ -25,9 +29,13 @@ func main() {
  log := gologger.New(os.Stdout, "", log.Ldate|log.Ltime)
  log.Info("Info log")
  log.Warn("Warning log")
+ log.Success("Success log")
+ log.Fatal(fmt.Errorf("Fatal error"))
  //....
 }
 ```
+# Example
+  <img alt="Gologger example" src="gologger-example.png">
 
 # About
 
